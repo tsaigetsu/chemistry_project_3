@@ -1,0 +1,24 @@
+@import url(./reset.css);
+
+:root {
+  --vinous: #8B0000;
+  --golden: #FFD700;
+  --cream: #FAF3E0;
+  --dark-blue: #2A2A72;
+  --gray-smoke: #C0C0C0;
+
+  --fire-orange: #FF4500;
+  --bright-red: #FF0000;
+  --dee-violet: #8B00FF;
+  --dark: #1A1A1A;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 1440px;
+}

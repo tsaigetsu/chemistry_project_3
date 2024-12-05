@@ -39,61 +39,63 @@ function App() {
   const currentItem = currentItems[currentIndex];
 
   return (
-    <div className={`app ${theme}`}>
-      <header className="header">
-        <div className="logo-container">
-          <img src={logo} alt="Logo" className="logo" />
-          <span className="title">{getTranslation('title')}</span>
-        </div>
-
-        <div className="nav-menu">
-          <span onClick={() => handleThemeChange('alcohol')} className={`nav-item ${theme === 'alcohol' ? 'active' : ''}`}>
-            {getTranslation('alcohol')}
-          </span>
-          <span className="separator">|</span>
-          <span onClick={() => handleThemeChange('flare')} className={`nav-item ${theme === 'flare' ? 'active' : ''}`}>
-            {getTranslation('flare')}
-          </span>
-        </div>
-
-        <div className="language-menu">
-          <span onClick={() => handleLanguageChange('pl')} className={`lang-item ${language === 'pl' ? 'active' : ''}`}>PL</span>
-          <span className="separator">|</span>
-          <span onClick={() => handleLanguageChange('en')} className={`lang-item ${language === 'en' ? 'active' : ''}`}>EN</span>
-        </div>
-
-        <div className="about-menu">
-          <span className="about-button">{getTranslation('about')}</span>
-        </div>
-      </header>
-
-      <section className="product-section">
-        <div className="product-container">
-          <div className="product-arrow left" onClick={() => handleScroll('prev')}>❮</div>
-
-          <div className="product-item">
-            <div className="product-image">
-              <img src={currentItem.img} alt={currentItem.name} />
-            </div>
-
-            <div className="product-info">
-              <h2>{currentItem.name}</h2>
-              {theme === 'alcohol' && <p>{getTranslation('alcoholContent')}: {currentItem.alcoholContent}</p>}
-              <p>{currentItem.description}</p>
-            </div>
+    <div className="app-container">
+      <div className={`app ${theme}`}>
+        <header className="header">
+          <div className="logo-container">
+            <img src={logo} alt="Logo" className="logo" />
+            <span className="title">{getTranslation('title')}</span>
           </div>
 
-          <div className="product-arrow right" onClick={() => handleScroll('next')}>❯</div>
-        </div>
-      </section>
+          <div className="nav-menu">
+            <span onClick={() => handleThemeChange('alcohol')} className={`nav-item ${theme === 'alcohol' ? 'active' : ''}`}>
+              {getTranslation('alcohol')}
+            </span>
+            <span className="separator">|</span>
+            <span onClick={() => handleThemeChange('flare')} className={`nav-item ${theme === 'flare' ? 'active' : ''}`}>
+              {getTranslation('flare')}
+            </span>
+          </div>
 
-      <section className="details-section">
-        <div className="details-container">
-          <h2>{currentItem.name}</h2>
-          <p>{currentItem.detailedDescription}</p>
+          <div className="language-menu">
+            <span onClick={() => handleLanguageChange('pl')} className={`lang-item ${language === 'pl' ? 'active' : ''}`}>PL</span>
+            <span className="separator">|</span>
+            <span onClick={() => handleLanguageChange('en')} className={`lang-item ${language === 'en' ? 'active' : ''}`}>EN</span>
+          </div>
+
+          <div className="about-menu">
+            <span className="about-button">{getTranslation('about')}</span>
+          </div>
+        </header>
+
+        <section className="product-section">
+          <div className="product-container">
+            <div className="product-arrow left" onClick={() => handleScroll('prev')}>❮</div>
+
+            <div className="product-item">
+              <div className="product-image">
+                <img src={currentItem.img} alt={currentItem.name} />
+              </div>
+
+              <div className="product-info">
+                <h2>{currentItem.name}</h2>
+                {theme === 'alcohol' && <p>{getTranslation('alcoholContent')}: {currentItem.alcoholContent}</p>}
+                <p>{currentItem.description}</p>
+              </div>
+            </div>
+
+            <div className="product-arrow right" onClick={() => handleScroll('next')}>❯</div>
+          </div>
+        </section>
+
+        <section className="details-section">
+          <div className="details-container">
+            <h2>{currentItem.name}</h2>
+            <p>{currentItem.detailedDescription}</p>
+          </div>
+        </section>
         </div>
-      </section>
-    </div>
+      </div>
   );
 }
 
