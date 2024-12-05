@@ -48,11 +48,11 @@ function App() {
           </div>
 
           <div className="nav-menu">
-            <span onClick={() => handleThemeChange('alcohol')} className={`nav-item ${theme === 'alcohol' ? 'active' : ''}`}>
+            <span onClick={() => handleThemeChange('alcohol')} className={`nav-item alcohole ${theme === 'alcohol' ? 'active' : ''}`}>
               {getTranslation('alcohol')}
             </span>
             <span className="separator">|</span>
-            <span onClick={() => handleThemeChange('flare')} className={`nav-item ${theme === 'flare' ? 'active' : ''}`}>
+            <span onClick={() => handleThemeChange('flare')} className={`nav-item flare ${theme === 'flare' ? 'active' : ''}`}>
               {getTranslation('flare')}
             </span>
           </div>

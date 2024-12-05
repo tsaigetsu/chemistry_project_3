@@ -1,24 +1,153 @@
 @import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+/* Основные цвета */
 :root {
   --vinous: #8B0000;
-  --golden: #FFD700;
-  --cream: #FAF3E0;
-  --dark-blue: #2A2A72;
-  --gray-smoke: #C0C0C0;
+  --dark-vinous: #732027;
+  --beaf: #400F0F;
+  --light-vinous: #A64949;
+  --cream-vinous: #BFA3A3;
 
-  --fire-orange: #FF4500;
-  --bright-red: #FF0000;
-  --dee-violet: #8B00FF;
-  --dark: #1A1A1A;
+  --fire-orange: #D93D04;
+  --dark-orange: #A62F03;
+  --brown: #591902;
+  --light-cream: #D9B4A7;
+  --bright-orange: #F2360C;
+
+  --dark: #101010;
 }
 
+/* Сброс стилей */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
+/* Контейнер страницы */
 .app-container {
-  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Темы для страницы */
+.app.alcohol {
+  background-color: var(--cream-vinous);
+}
+
+.app.flare {
+  background-color: var(--dark);
+}
+
+/* Стили хедера */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--beaf);
+  backdrop-filter: blur(10px);
+  /* Эффект матового стекла */
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--vinous);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+.separator {
+  color: var(--dark);
+}
+
+.app.alcohol .header {
+  background-color: var(--cream-vinous);
+}
+
+.app.flare .header {
+  background-color: var(--beaf);
+  color: var(--light-cream);
+}
+
+/* Логотип и название */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Меню навигации */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 5px 15px;
+  color: var(--dark);
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.nav-item.alcohole:hover,
+.nav-item.alcohole:focus {
+  color: var(--vinous);
+}
+
+.nav-item.flare:focus,
+.nav-item.flare:hover {
+  color: var(--fire-orange);
+}
+
+.app.flare .nav-item:hover {
+  color: var(--bright-orange);
+}
+
+/* Меню языка */
+.language-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-item {
+  cursor: pointer;
+  padding: 5px;
+  color: var(--dark);
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.lang-item:hover,
+.lang-item:focus {
+  color: var(--vinous);
+}
+
+/* Кнопка About */
+.about-button {
+  cursor: pointer;
+  padding: 5px 15px;
+  color: var(--vinous);
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 20px;
+}
+
+.about-button:hover {
+  color: var(--light-cream);
+  transform: scale(1.05);
 }
