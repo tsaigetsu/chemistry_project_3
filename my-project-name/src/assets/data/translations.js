@@ -1,6 +1,7 @@
 // assets/data/translations.js
 export const translations = {
-  en: {
+    en: {
+    title:"Burn And Blur",
     alcohol: "Alcohol",
     flare: "Flare",
     about: "About",
@@ -15,7 +16,8 @@ export const translations = {
     prev: "Prev",
     close: "Close",
   },
-  pl: {
+    pl: {
+    title:"Burn And Blur",
     alcohol: "Alkohol",
     flare: "Fajerwerki",
     about: "O projekcie",
