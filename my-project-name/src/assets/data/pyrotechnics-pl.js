@@ -6,68 +6,63 @@ import anfo from '../images/anfo.png';
 
 export const pyrotechnicsPL = [
   { 
-    name: 'PETN (Pentaerythritol Tetranitrate)', 
+    name: 'PETN', 
     img: penta, 
-    description: 'Bardzo wybuchowy materiał wykorzystywany w wojskowości.',
-    detailedDescription: `
-      Fakty:
-      - PETN to azotan organiczny, stosowany głównie w przemyśle militarnym i w produkcji materiałów wybuchowych.
-      - W przemyśle PETN może być stosowany w precyzyjnych procesach, które wymagają dużej siły detonacji.
-
-      Mity:
-      - PETN jest używane tylko w wojsku – to nieprawda, wykorzystywane jest również w przemyśle cywilnym.
+    description: 'Bardzo wybuchowy materiał używany w wojsku.',
+    facts: `
+      - PETN to azotan organiczny, głównie używany w wojsku i produkcji materiałów wybuchowych.
+      - W przemyśle PETN jest używany w precyzyjnych aplikacjach wymagających dużej siły detonacyjnej.
+    `,
+    myths:`
+      - PETN jest wykorzystywany tylko w wojsku – to nieprawda, jest także wykorzystywany w przemyśle cywilnym.
     `
   },
   { 
     name: 'Dynamit', 
     img: dynamite, 
     description: 'Znany materiał wybuchowy używany w górnictwie.',
-    detailedDescription: `
-      Fakty:
-      - Dynamit został wynaleziony przez Alfreda Nobla w 1867 roku, jest szeroko stosowany w górnictwie, budownictwie i eksploracji geologicznej.
-      - Dynamit składa się głównie z nitrogliceryny, stabilizowanej innymi substancjami.
-
-      Mity:
-      - Dynamit jest niebezpieczny – nowoczesne metody produkcji sprawiają, że jest bezpieczniejszy w użyciu, pod warunkiem przestrzegania zasad.
+    facts: `
+      - Dynamit został wynaleziony przez Alfreda Nobla w 1867 roku i jest szeroko stosowany w górnictwie i budownictwie.
+      - Dynamit jest bardziej stabilnym materiałem wybuchowym niż nitrogliceryna.
+    `,
+    myths:`
+      - Dynamit jest niebezpieczny do codziennego użytku – choć jest niebezpieczny, w górnictwie i rozbiórce jest stosowany w kontrolowany sposób.
     `
   },
   { 
-    name: 'TNT (Trinitrotoluene)', 
-    img: tnt, 
-    description: 'Stabilny i szeroko stosowany materiał wybuchowy.',
-    detailedDescription: `
-      Fakty:
-      - TNT to jeden z najstarszych materiałów wybuchowych, stosowany głównie w wojsku i w niektórych procesach przemysłowych.
-      - TNT jest stosunkowo stabilny, łatwy w produkcji i transporcie.
-
-      Mity:
-      - TNT jest niebezpieczne i niestabilne – w rzeczywistości jest to jeden z najbardziej stabilnych materiałów wybuchowych.
-    `
-  },
-  { 
-    name: 'ANFO (Azotan amonu z olejem napędowym)', 
+    name: 'ANFO', 
     img: anfo, 
-    description: 'Potężny materiał wybuchowy używany w górnictwie.',
-    detailedDescription: `
-      Fakty:
-      - ANFO to jeden z najtańszych i najpopularniejszych materiałów wybuchowych, wykorzystywany głównie w przemyśle górniczym.
-      - Jest łatwy do wytworzenia i stosunkowo stabilny.
-
-      Mity:
-      - ANFO jest łatwe do wyprodukowania – choć jest stosunkowo łatwy do wytworzenia, jego produkcja jest ściśle regulowana.
+    description: 'Powszechnie stosowany materiał wybuchowy w górnictwie i budownictwie.',
+    facts: `
+      - ANFO (azotan amonu i olej opałowy) jest szeroko stosowanym materiałem wybuchowym, głównie w górnictwie i kamieniołomach.
+      - Jest stosunkowo tani i bezpieczny w obsłudze, gdy jest odpowiednio używany.
+    `,
+    myths:`
+      - ANFO jest nieszkodliwy i stosowany w małych ilościach – większe ilości mogą być niezwykle niebezpieczne, zwłaszcza jeśli nie są odpowiednio przechowywane.
     `
   },
   { 
-    name: 'Rakiety pirotechniczne', 
+    name: 'Rakiety', 
     img: rockets, 
-    description: 'Rakiety pirotechniczne tworzące kolorowe pokazy na niebie.',
-    detailedDescription: `
-      Fakty:
-      - Rakiety pirotechniczne wybuchają na dużej wysokości, tworząc kolorowe efekty.
-      - Związki chemiczne takie jak stront, miedź czy baryt nadają rakietom różne kolory.
-
-      Mity:
-      - Rakiety są całkowicie bezpieczne – niewłaściwe obchodzenie się z rakietami może prowadzić do poważnych wypadków.
+    description: 'Rakiety o dużej mocy stosowane w sztuce pirotechnicznej i wojsku.',
+    facts: `
+      - Rakiety zaprojektowane są do wytwarzania dużego ciągu, stosowane zarówno w fajerwerkach, jak i w wojskowych zastosowaniach.
+      - Rakiety mogą być napędzane przez różne paliwa, w tym stałe i ciekłe.
+    `,
+    myths:`
+      - Rakiety mają tylko zastosowanie wojskowe – rakiety są także szeroko stosowane w fajerwerkach i eksploracji kosmosu.
+    `
+  },
+  { 
+    name: 'TNT', 
+    img: tnt, 
+    description: 'Potężny materiał wybuchowy stosowany głównie w rozbiórkach i wojsku.',
+    facts: `
+      - TNT (trinitrotoluen) jest jednym z najczęściej używanych materiałów wybuchowych w rozbiórkach.
+      - Jest znany z stabilności i bezpieczeństwa w obsłudze w porównaniu do innych materiałów wybuchowych.
+    `,
+    myths:`
+      - TNT jest zbyt niebezpieczne, by używać go bezpiecznie – TNT jest stabilne i stosunkowo bezpieczne, jeśli jest odpowiednio obsługiwane.
     `
   },
 ];

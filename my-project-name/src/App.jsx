@@ -1,102 +1,133 @@
-import { useState } from 'react';
-import { alcoholsEN } from './assets/data/alcohols-en.js';
-import { alcoholsPL } from './assets/data/alcohols-pl.js';
-import { pyrotechnicsEN } from './assets/data/pyrotechnics-en.js';
-import { pyrotechnicsPL } from './assets/data/pyrotechnics-pl.js';
-import { translations } from './assets/data/translations.js';
-import logo from './assets/logo.png';
+import React, { useState } from "react";
+import logo from "./assets/logo.png";
+import "./index.css";
+import { alcoholsEN } from "./assets/data/alcohols-en";
+import { alcoholsPL } from "./assets/data/alcohols-pl";
+import { pyrotechnicsEN } from "./assets/data/pyrotechnics-en";
+import { pyrotechnicsPL } from "./assets/data/pyrotechnics-PL";
+import { translations } from "./assets/data/translations";
+import DetailsSection from './components/DetailsSection';
+import BigCard from './components/BigCard';
 
-function App() {
-  const [theme, setTheme] = useState('alcohol'); // Тема по умолчанию - alcohol
-  const [currentIndex, setCurrentIndex] = useState(0); // Индекс текущего продукта
-  const [language, setLanguage] = useState('en'); // Язык по умолчанию - английский
+// Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
+const allAlcoholsEN = alcoholsEN;
+const allAlcoholsPL = alcoholsPL;
+const allPyrotechnicsEN = pyrotechnicsEN;
+const allPyrotechnicsPL = pyrotechnicsPL;
 
-  // Получение перевода в зависимости от языка
-  const getTranslation = (key) => translations[language][key] || key;
+const App = () => {
+  const [language, setLanguage] = useState("en");
+  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+  const [currentTheme, setCurrentTheme] = useState("alcohol");
+  const [selectedProductIndex, setSelectedProductIndex] = useState(null); // Для выбранного продукта
 
-  // Данные для текущей темы и языка
-  const currentItems = theme === 'alcohol'
-    ? (language === 'pl' ? alcoholsPL : alcoholsEN)
-    : (language === 'pl' ? pyrotechnicsPL : pyrotechnicsEN);
-
-  const handleThemeChange = (newTheme) => {
-    setTheme(newTheme); // Меняем тему
+  // Функция для переключения языка
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "pl" : "en");
   };
 
-  const handleLanguageChange = (newLanguage) => {
-    setLanguage(newLanguage); // Меняем язык
-    setCurrentIndex(0); // Сбрасываем индекс текущего продукта при смене языка
+  // Функция для переключения темы
+  const toggleTheme = (theme) => {
+    setCurrentTheme(theme);
+    setCurrentProductIndex(0); // сброс индекса при смене темы
   };
 
-  const handleScroll = (direction) => {
-    if (direction === 'next') {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % currentItems.length);
-    } else {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + currentItems.length) % currentItems.length);
-    }
+  // Логика для смены продукта
+  const nextProduct = () => {
+    const totalProducts = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
+    setCurrentProductIndex((prevIndex) => (prevIndex + 1) % totalProducts);
   };
 
-  const currentItem = currentItems[currentIndex];
+  const prevProduct = () => {
+    const totalProducts = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
+    setCurrentProductIndex((prevIndex) => (prevIndex - 1 + totalProducts) % totalProducts);
+  };
+
+  // Выбор данных в зависимости от текущей темы и языка
+  const currentData = currentTheme === "alcohol"
+    ? language === "en" ? allAlcoholsEN[currentProductIndex] : allAlcoholsPL[currentProductIndex]
+    : language === "en" ? allPyrotechnicsEN[currentProductIndex] : allPyrotechnicsPL[currentProductIndex];
+
+  // Получаем переводы для текущего языка
+  const t = translations[language];
+
+  // Данные для карточек в зависимости от темы
+  const detailsData = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL) : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL);
+
+  // Функция для обработки клика на карточку
+  const handleCardClick = (index) => {
+    setSelectedProductIndex(index);
+  };
 
   return (
-    <div className="app-container">
-      <div className={`app ${theme}`}>
-        <header className="header">
-          <div className="logo-container">
-            <img src={logo} alt="Logo" className="logo" />
-            <span className="title">{getTranslation('title')}</span>
-          </div>
+    <div className="App">
+      {/* Фоновый текст */}
+      <section className="background-text-section">
+        <h1 className="background-text">{t.title}</h1>
+        <div className="filter-overlay"></div>
+      </section>
 
-          <div className="nav-menu">
-            <span onClick={() => handleThemeChange('alcohol')} className={`nav-item alcohole ${theme === 'alcohol' ? 'active' : ''}`}>
-              {getTranslation('alcohol')}
-            </span>
-            <span className="separator">|</span>
-            <span onClick={() => handleThemeChange('flare')} className={`nav-item flare ${theme === 'flare' ? 'active' : ''}`}>
-              {getTranslation('flare')}
-            </span>
-          </div>
+      {/* Меню слева */}
+      <div className="sidebar">
+        <img src={logo} alt="Logo" className="logo" />
 
-          <div className="language-menu">
-            <span onClick={() => handleLanguageChange('pl')} className={`lang-item ${language === 'pl' ? 'active' : ''}`}>PL</span>
-            <span className="separator">|</span>
-            <span onClick={() => handleLanguageChange('en')} className={`lang-item ${language === 'en' ? 'active' : ''}`}>EN</span>
-          </div>
+        {/* Новые кнопки */}
+        <div className="additional-buttons">
+          <button className="additional-btn" id="alcohol" onClick={() => toggleTheme("alcohol")}>{t.alcohol}</button>
+          <hr className="divider" />
+          <button className="additional-btn" id="flare" onClick={() => toggleTheme("flare")}>{t.flare}</button>
+        </div>
 
-          <div className="about-menu">
-            <span className="about-button">{getTranslation('about')}</span>
-          </div>
-        </header>
-
-        <section className="product-section">
-          <div className="product-container">
-            <div className="product-arrow left" onClick={() => handleScroll('prev')}>❮</div>
-
-            <div className="product-item">
-              <div className="product-image">
-                <img src={currentItem.img} alt={currentItem.name} />
-              </div>
-
-              <div className="product-info">
-                <h2>{currentItem.name}</h2>
-                {theme === 'alcohol' && <p>{getTranslation('alcoholContent')}: {currentItem.alcoholContent}</p>}
-                <p>{currentItem.description}</p>
-              </div>
-            </div>
-
-            <div className="product-arrow right" onClick={() => handleScroll('next')}>❯</div>
-          </div>
-        </section>
-
-        <section className="details-section">
-          <div className="details-container">
-            <h2>{currentItem.name}</h2>
-            <p>{currentItem.detailedDescription}</p>
-          </div>
-        </section>
+        <div className="language-buttons">
+          <button className="language-btn" id="en" onClick={toggleLanguage}>EN</button>
+          <hr className="divider" />
+          <button className="language-btn" id="pl" onClick={toggleLanguage}>PL</button>
         </div>
       </div>
+
+      {/* Контент с изображением и описанием */}
+      <section className="content-section">
+        <div className="image-wrap">
+          <img
+            src={currentData.img} 
+            alt={currentData.name}
+            className="product-image"
+          />
+        </div>
+        <div className="product-info">
+          <h2 className="product-title">{currentData.name}</h2>
+          <h3 className="discover-facts">
+            {t.discover} <span className={`facts ${currentTheme}`}>{t.discoverFacts}</span>
+          </h3>
+
+          {/* Кнопки навигации */}
+          <div className="navigation-buttons">
+            <button className="nav-btn" onClick={prevProduct}>{t.prev}</button>
+            <button className="nav-btn" onClick={nextProduct}>{t.next}</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Новая секция с карточками */}
+      {/* Если выбран продукт, отображаем подробную информацию */}
+      {selectedProductIndex !== null ? (
+          <BigCard
+            product={detailsData[selectedProductIndex]}
+          onBack={() => setSelectedProductIndex(null)}
+          theme={currentTheme}
+          />
+        ) : (
+          <DetailsSection
+            productList={detailsData}
+            onSelect={setSelectedProductIndex}
+            toggleTheme={toggleTheme} // Передача функции смены темы
+            t={t} // Передача объекта с текстом
+          />
+
+        )}
+
+    </div>
   );
-}
+};
 
 export default App;

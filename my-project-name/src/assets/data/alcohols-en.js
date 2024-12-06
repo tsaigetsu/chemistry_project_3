@@ -10,12 +10,11 @@ export const alcoholsEN = [
     img: beerImg, 
     alcoholContent: '5%', 
     description: 'A refreshing pale lager with a crisp taste.',
-    detailedDescription: `
-      Facts:
+    facts: `
       - Beer contains B vitamins and minerals like potassium and magnesium, which may support the cardiovascular system.
       - Moderate beer consumption (1-2 beers a day) can reduce the risk of heart disease.
-
-      Myths:
+    `,
+    myths:`
       - Beer "causes belly fat" – this is a myth, as weight gain results more from excessive calorie consumption rather than the beer itself.
       - Beer is a mild drink and has little impact on the body – in reality, excessive beer consumption can lead to liver damage and other serious health issues.
     ` 
@@ -25,11 +24,12 @@ export const alcoholsEN = [
     img: wineImg, 
     alcoholContent: '12%', 
     description: 'A rich red wine with a complex flavor profile.',
-    detailedDescription: `
+    facts: `
       Facts:
       - Wine, especially red, contains antioxidants like resveratrol, which may help fight aging and prevent heart disease.
       - Moderate consumption (1 glass a day) has cardiovascular benefits.
-
+    `,
+    myths:`
       Myths:
       - Wine is healthy, so you can drink more – excessive wine consumption leads to health issues like addiction and liver disease.
       - Wine helps with weight loss – this is a myth, as wine contains alcohol and calories that can contribute to weight gain.

@@ -6,15 +6,14 @@ import anfo from '../images/anfo.png';
 
 export const pyrotechnicsEN = [
   { 
-    name: 'PETN (Pentaerythritol Tetranitrate)', 
+    name: 'PETN', 
     img: penta, 
     description: 'A highly explosive material used in the military.',
-    detailedDescription: `
-      Facts:
+    facts: `
       - PETN is an organic nitrate, primarily used in the military and explosives manufacturing.
       - In industry, PETN is used for precision applications requiring high detonation force.
-
-      Myths:
+    `,
+    myths:`
       - PETN is only used in the military – this is false, as it is also used in civilian industries.
     `
   },
@@ -22,52 +21,48 @@ export const pyrotechnicsEN = [
     name: 'Dynamite', 
     img: dynamite, 
     description: 'A well-known explosive used in mining.',
-    detailedDescription: `
-      Facts:
-      - Dynamite was invented by Alfred Nobel in 1867 and is widely used in mining, construction, and geological exploration.
-      - It primarily consists of nitroglycerin, stabilized by other substances.
-
-      Myths:
-      - Dynamite is dangerous – modern production methods make it safer to handle, as long as safety guidelines are followed.
+    facts: `
+      - Dynamite was invented by Alfred Nobel in 1867 and is widely used in mining and construction.
+      - Dynamite is a more stable explosive than nitroglycerin.
+    `,
+    myths:`
+      - Dynamite is dangerous for regular use – while it is dangerous, it is controlled and handled properly in mining and demolition.
     `
   },
   { 
-    name: 'TNT (Trinitrotoluene)', 
-    img: tnt, 
-    description: 'A stable and widely used explosive material.',
-    detailedDescription: `
-      Facts:
-      - TNT is one of the oldest explosives, commonly used in military applications and some industrial processes.
-      - TNT is relatively stable and easy to manufacture and transport.
-
-      Myths:
-      - TNT is dangerous and unstable – in fact, it is one of the most stable explosives available.
-    `
-  },
-  { 
-    name: 'ANFO (Ammonium Nitrate Fuel Oil)', 
+    name: 'ANFO', 
     img: anfo, 
-    description: 'A powerful explosive used in mining.',
-    detailedDescription: `
-      Facts:
-      - ANFO is one of the cheapest and most popular explosives, used mainly in the mining industry.
-      - It is easy to produce and relatively stable.
-
-      Myths:
-      - ANFO is easy to make – while it is relatively simple to produce, its production is strictly regulated.
+    description: 'A common explosive used in mining and construction.',
+    facts: `
+      - ANFO (Ammonium Nitrate Fuel Oil) is a widely used explosive, primarily in mining and quarrying.
+      - It is relatively inexpensive and safe to handle when used properly.
+    `,
+    myths:`
+      - ANFO is harmless and only used in small quantities – large amounts can be extremely dangerous, especially when mishandled.
     `
   },
   { 
-    name: 'Rocket Fireworks', 
+    name: 'Rockets', 
     img: rockets, 
-    description: 'Rocket fireworks that create colorful displays in the sky.',
-    detailedDescription: `
-      Facts:
-      - Rocket fireworks explode at high altitudes to create beautiful sky displays.
-      - Chemical compounds like strontium, copper, and barium give rockets their vivid colors.
-
-      Myths:
-      - Rockets are completely safe – improper handling can lead to serious accidents.
+    description: 'High-powered rockets often used for fireworks and military applications.',
+    facts: `
+      - Rockets are designed to produce a large thrust and are used in both entertainment (fireworks) and defense sectors.
+      - Rockets can be powered by various fuels including solid and liquid propellants.
+    `,
+    myths:`
+      - Rockets only have military uses – rockets are also widely used in fireworks and space exploration.
+    `
+  },
+  { 
+    name: 'TNT', 
+    img: tnt, 
+    description: 'A powerful explosive commonly used in demolition and military applications.',
+    facts: `
+      - TNT (Trinitrotoluene) is one of the most commonly used explosives in demolition.
+      - It is known for its stability and safety in handling compared to other explosives.
+    `,
+    myths:`
+      - TNT is too dangerous to use safely – TNT is stable and relatively safe when handled correctly.
     `
   },
 ];

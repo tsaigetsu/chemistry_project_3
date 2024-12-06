@@ -1,7 +1,6 @@
-// assets/data/translations.js
 export const translations = {
-    en: {
-    title:"Burn And Blur",
+  en: {
+    title: "Burn And Blur",
     alcohol: "Alcohol",
     flare: "Flare",
     about: "About",
@@ -15,13 +14,18 @@ export const translations = {
     next: "Next",
     prev: "Prev",
     close: "Close",
+    discover: "DISCOVER YOUR",
+    discoverFacts: "FACTS",
+    facts: "Facts",
+    myths: "Myths",
+    back: "Back",
   },
-    pl: {
-    title:"Burn And Blur",
+  pl: {
+    title: "Burn And Blur",
     alcohol: "Alkohol",
-    flare: "Fajerwerki",
+    flare: "Flara",
     about: "O projekcie",
-    alcoholContent: "Zawartosc alkoholu",
+    alcoholContent: "Zawartość alkoholu",
     detailedDescription: "Szczegółowy opis",
     description: "Opis",
     details: "Szczegóły",
@@ -31,5 +35,10 @@ export const translations = {
     next: "Następny",
     prev: "Poprzedni",
     close: "Zamknij",
+    discover: "ODKRYJ SWOJE",
+    discoverFacts: "FAKTY",
+    facts: "Fakty",
+    myths: "Mity",
+    back: "Wróć",
   }
 };
