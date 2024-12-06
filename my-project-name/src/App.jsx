@@ -16,6 +16,8 @@ import History from './components/History.jsx';
 import About from './components/About.jsx';
 import Footer from './components/Footer.jsx'; // Импортируем Footer
 import Loader from './components/Loader.jsx'; // Импортируем компонент лоадера
+import AOS from 'aos'; // Импортируем AOS
+import 'aos/dist/aos.css'; // Импортируем стили AOS
 
 // Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
 const allAlcoholsEN = alcoholsEN;
@@ -32,6 +34,13 @@ const App = () => {
   const [historyVisible, setHistoryVisible] = useState(false);
 
   useEffect(() => {
+    // Инициализация AOS
+    AOS.init({
+      duration: 1000, // Продолжительность анимации
+      easing: 'ease-out', // Эффект движения
+      once: true, // Анимация будет запускаться только один раз
+    });
+
     setTimeout(() => {
       setIsLoading(false); // Скрываем лоадер после 2 секунд
     }, 2000);
@@ -86,13 +95,13 @@ const App = () => {
       ) : (
         <>
           {/* Фоновый текст */}
-          <section className="background-text-section">
+          <section className="background-text-section" data-aos="fade-down">
             <h1 className="background-text">{t.title}</h1>
             <div className="filter-overlay"></div>
           </section>
 
           {/* Меню слева */}
-          <div className="sidebar">
+          <div className="sidebar" data-aos="fade-down">
             <img src={logo} alt="Logo" className="logo" />
 
             {/* Новые кнопки */}
@@ -110,24 +119,28 @@ const App = () => {
           </div>
 
           {/* Контент с изображением и описанием */}
-          <section className="content-section">
+          <section className="content-section" data-aos="fade-down">
             <div className="image-wrap">
-              <img
-                src={currentData.img} 
-                alt={currentData.name}
-                className="product-image"
-              />
+              <img src={currentData.img} alt={currentData.name} className="product-image" />
             </div>
             <div className="product-info">
               <h2 className="product-title">{currentData.name}</h2>
               <h3 className="discover-facts">
                 {t.discover} <span className={`facts ${currentTheme}`}>{t.discoverFacts}</span>
               </h3>
-
-              {/* Кнопки навигации */}
               <div className="navigation-buttons">
-                <button className="nav-btn" onClick={prevProduct}>{t.prev}</button>
-                <button className="nav-btn" onClick={nextProduct}>{t.next}</button>
+                <button 
+                        className={`nav-btn ${currentTheme === "alcohol" ? "alcohol" : "flare"}`} 
+                        onClick={prevProduct}
+                      >
+                        {t.prev}
+                      </button>
+                      <button 
+                        className={`nav-btn ${currentTheme === "alcohol" ? "alcohol" : "flare"}`} 
+                        onClick={nextProduct}
+                      >
+                        {t.next}
+                      </button>
               </div>
             </div>
           </section>
@@ -135,20 +148,21 @@ const App = () => {
           {/* Новая секция с карточками */}
           {/* Если выбран продукт, отображаем подробную информацию */}
           {selectedProductIndex !== null ? (
-              <BigCard
-                product={detailsData[selectedProductIndex]}
-                onBack={() => setSelectedProductIndex(null)}
-                theme={currentTheme}
-              />
-            ) : (
-              <DetailsSection
-                productList={detailsData}
-                onSelect={setSelectedProductIndex}
-                toggleTheme={toggleTheme} // Передача функции смены темы
-                t={t} // Передача объекта с текстом
-                language={language}
-              />
+            <BigCard
+              product={detailsData[selectedProductIndex]}
+              onBack={() => setSelectedProductIndex(null)}
+              theme={currentTheme}
+            />
+          ) : (
+            <DetailsSection
+              productList={detailsData}
+              onSelect={setSelectedProductIndex}
+              toggleTheme={toggleTheme} // Передача функции смены темы
+              t={t} // Передача объекта с текстом
+              language={language}
+            />
           )}
+
           {/* Секция History */}
           <History
             historyData={historyData}
@@ -157,11 +171,14 @@ const App = () => {
             t={t}
             theme={currentTheme}
           />
+
           {/* Секция About */}
           <About
             language={language}
             image={currentData.img}
           />
+
+          {/* Футер */}
           <Footer language={language} />
         </>
       )}
