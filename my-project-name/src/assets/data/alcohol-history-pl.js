@@ -1,4 +1,4 @@
-export const historyAlcoPL = [
+export const alcoholsHistoryPL = [
     {
         history: `Alkohol, szczególnie etanol, jest jednym z najstarszych znanych związków chemicznych. Jego produkcja rozpoczęła się naturalnie poprzez fermentację cukrów w owocach i zbożach, co miało miejsce już około 7 tysięcy lat p.n.e. w Gruzji. W starożytnym Egipcie, Grecji i Rzymie alkohol, szczególnie wino, był szeroko stosowany zarówno w codziennym życiu, jak i w rytuałach religijnych. Dzięki doskonaleniu destylacji w średniowieczu, zaczęto produkować mocniejsze alkohole, takie jak wódka czy brandy.
 

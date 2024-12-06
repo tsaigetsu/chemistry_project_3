@@ -1,4 +1,4 @@
-export const historyAlcoEN = [
+export const alcoholsHistoryEN = [
     {
         history: `Alcohol, especially ethanol, is one of the oldest known chemical compounds. Its production began naturally through the fermentation of sugars in fruits and grains, which took place around 7,000 years ago in Georgia. In ancient Egypt, Greece, and Rome, alcohol, particularly wine, was widely used in both daily life and religious rituals. With the improvement of distillation in the Middle Ages, stronger alcoholic beverages, such as vodka and brandy, began to be produced.
 

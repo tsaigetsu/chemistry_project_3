@@ -1,10 +1,12 @@
 import React from "react";
 import SmallCard from "./SmallCard";
 
-const DetailsSection = ({ productList, onSelect, toggleTheme, t }) => {
+const DetailsSection = ({ productList, onSelect, toggleTheme, t, language }) => {
   return (
     <section className="details-section">
-      <h2 className="details-section-title">Details</h2>
+      <h2 className="details-section-title">
+        {language === "en" ? "Details" : "Szczegóły"}
+      </h2>
       <div className="cards-container">
         {productList.map((product, index) => (
           <SmallCard

@@ -40,12 +40,11 @@ export const alcoholsEN = [
     img: vodkaImg, 
     alcoholContent: '40%', 
     description: 'A clean spirit, perfect for cocktails.',
-    detailedDescription: `
-      Facts:
+    facts:`
       - Vodka is one of the purest alcoholic beverages with fewer additives compared to other spirits.
       - Moderate vodka consumption can help relax and improve mood.
-
-      Myths:
+    `,
+    myths:`
       - Vodka is "healthier" than other spirits – excessive vodka consumption can cause serious liver and heart damage.
       - Vodka keeps you warm – alcohol causes the dilation of blood vessels, which can actually result in heat loss.
     ` 
@@ -55,12 +54,11 @@ export const alcoholsEN = [
     img: rumImg, 
     alcoholContent: '37.5%', 
     description: 'A sweet rum perfect for cocktails.',
-    detailedDescription: `
-      Facts:
+    facts: `
       - Rum contains higher alcohol content, so it has a stronger effect on the body.
       - Moderate rum consumption has a relaxing effect.
-
-      Myths:
+    `,
+    myths:`
       - Rum has medicinal properties – while it can have antiseptic effects, excessive drinking leads to serious health issues.
       - Rum boosts libido – alcohol in excess can actually impair sexual activity.
     ` 
@@ -70,12 +68,11 @@ export const alcoholsEN = [
     img: tequilaImg, 
     alcoholContent: '40%', 
     description: 'A smooth tequila ideal for shots and cocktails.',
-    detailedDescription: `
-      Facts:
+    facts: `
       - Tequila made from 100% agave contains fewer additives, making it a cleaner spirit.
       - In moderate amounts, tequila can aid digestion.
-
-      Myths:
+    `,
+      myths:`
       - Tequila is "clean" and safe – drinking tequila in excess can still lead to serious health problems.
       - Tequila is more effective than other alcohols – the speed of intoxication depends on the individual’s tolerance, not the type of alcohol.
     ` 

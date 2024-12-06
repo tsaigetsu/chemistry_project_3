@@ -5,9 +5,16 @@ import { alcoholsEN } from "./assets/data/alcohols-en";
 import { alcoholsPL } from "./assets/data/alcohols-pl";
 import { pyrotechnicsEN } from "./assets/data/pyrotechnics-en";
 import { pyrotechnicsPL } from "./assets/data/pyrotechnics-PL";
+import { alcoholsHistoryEN } from "./assets/data/alcohol-history-en";
+import { alcoholsHistoryPL } from "./assets/data/alcohol-history-pl";
+import { pyrotechnicsHistoryEN } from "./assets/data/pyrotechnics-history-en";
+import { pyrotechnicsHistoryPL } from "./assets/data/pyrotechnics-history-pl";
 import { translations } from "./assets/data/translations";
 import DetailsSection from './components/DetailsSection';
 import BigCard from './components/BigCard';
+import History from './components/History';
+import About from './components/About';
+import Footer from './components/Footer'; // Импортируем Footer
 
 // Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
 const allAlcoholsEN = alcoholsEN;
@@ -20,6 +27,7 @@ const App = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [currentTheme, setCurrentTheme] = useState("alcohol");
   const [selectedProductIndex, setSelectedProductIndex] = useState(null); // Для выбранного продукта
+  const [historyVisible, setHistoryVisible] = useState(false);
 
   // Функция для переключения языка
   const toggleLanguage = () => {
@@ -58,6 +66,10 @@ const App = () => {
   const handleCardClick = (index) => {
     setSelectedProductIndex(index);
   };
+
+   const historyData = currentTheme === "alcohol"
+    ? language === "en" ? alcoholsHistoryEN : alcoholsHistoryPL
+    : language === "en" ? pyrotechnicsHistoryEN : pyrotechnicsHistoryPL;
 
   return (
     <div className="App">
@@ -122,10 +134,24 @@ const App = () => {
             onSelect={setSelectedProductIndex}
             toggleTheme={toggleTheme} // Передача функции смены темы
             t={t} // Передача объекта с текстом
+            language={language}
           />
 
-        )}
-
+      )}
+      {/* Секция History */}
+      <History
+        historyData={historyData}
+        isVisible={historyVisible}
+        onToggle={() => setHistoryVisible(prev => !prev)}
+        t={t}
+        theme={currentTheme}
+      />
+      {/* Секция About */}
+      <About
+        language={language}
+        image={currentData.img}
+      />
+      <Footer language={language} />
     </div>
   );
 };

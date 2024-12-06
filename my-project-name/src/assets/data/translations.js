@@ -19,6 +19,7 @@ export const translations = {
     facts: "Facts",
     myths: "Myths",
     back: "Back",
+    history: "History",
   },
   pl: {
     title: "Burn And Blur",
@@ -40,5 +41,6 @@ export const translations = {
     facts: "Fakty",
     myths: "Mity",
     back: "Wróć",
+    history: "Historija",
   }
 };

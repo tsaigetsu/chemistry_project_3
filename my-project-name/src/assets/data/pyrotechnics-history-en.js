@@ -1,4 +1,4 @@
-export const historyPyrotechnicsEN = [
+export const pyrotechnicsHistoryEN = [
     {
         history: `Pyrotechnics has its roots in ancient China. The first explosive materials, such as gunpowder, were created there around the 9th century AD. Chinese alchemists accidentally discovered that a mixture of sulfur, carbon, and potassium nitrate reacts explosively, leading to the creation of gunpowder. Initially, it was used mainly for military and ceremonial purposes, but soon it was also used to create light effects during festivals.
 

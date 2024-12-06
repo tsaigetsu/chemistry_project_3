@@ -1,4 +1,4 @@
-export const historyPyrotechnicsPL = [
+export const pyrotechnicsHistoryPL = [
     {
         history: `Pyrotechnika ma swoje korzenie w starożytnych Chinach. Pierwsze materiały wybuchowe, takie jak proch strzelniczy, powstały tam około IX wieku n.e. Chińscy alchemicy przypadkowo odkryli, że mieszanka siarki, węgla i azotanu potasu reaguje wybuchowo, co dało początek prochowi strzelniczemu. Początkowo używano go głównie do celów militarnych i obrzędowych, ale wkrótce zaczęto wykorzystywać go również do tworzenia efektów świetlnych podczas festiwali.
 
