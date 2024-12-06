@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./assets/logo.png";
 import "./index.css";
 import { alcoholsEN } from "./assets/data/alcohols-en.js";
@@ -15,6 +15,7 @@ import BigCard from './components/BigCard.jsx';
 import History from './components/History.jsx';
 import About from './components/About.jsx';
 import Footer from './components/Footer.jsx'; // Импортируем Footer
+import Loader from './components/Loader.jsx'; // Импортируем компонент лоадера
 
 // Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
 const allAlcoholsEN = alcoholsEN;
@@ -23,11 +24,18 @@ const allPyrotechnicsEN = pyrotechnicsEN;
 const allPyrotechnicsPL = pyrotechnicsPL;
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true); // Используем состояние для отображения лоадера
   const [language, setLanguage] = useState("en");
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [currentTheme, setCurrentTheme] = useState("alcohol");
   const [selectedProductIndex, setSelectedProductIndex] = useState(null); // Для выбранного продукта
   const [historyVisible, setHistoryVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false); // Скрываем лоадер после 2 секунд
+    }, 2000);
+  }, []);
 
   // Функция для переключения языка
   const toggleLanguage = () => {
@@ -73,85 +81,90 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* Фоновый текст */}
-      <section className="background-text-section">
-        <h1 className="background-text">{t.title}</h1>
-        <div className="filter-overlay"></div>
-      </section>
+      {isLoading ? (
+        <Loader /> // Показать лоадер, если данные еще загружаются
+      ) : (
+        <>
+          {/* Фоновый текст */}
+          <section className="background-text-section">
+            <h1 className="background-text">{t.title}</h1>
+            <div className="filter-overlay"></div>
+          </section>
 
-      {/* Меню слева */}
-      <div className="sidebar">
-        <img src={logo} alt="Logo" className="logo" />
+          {/* Меню слева */}
+          <div className="sidebar">
+            <img src={logo} alt="Logo" className="logo" />
 
-        {/* Новые кнопки */}
-        <div className="additional-buttons">
-          <button className="additional-btn" id="alcohol" onClick={() => toggleTheme("alcohol")}>{t.alcohol}</button>
-          <hr className="divider" />
-          <button className="additional-btn" id="flare" onClick={() => toggleTheme("flare")}>{t.flare}</button>
-        </div>
+            {/* Новые кнопки */}
+            <div className="additional-buttons">
+              <button className="additional-btn" id="alcohol" onClick={() => toggleTheme("alcohol")}>{t.alcohol}</button>
+              <hr className="divider" />
+              <button className="additional-btn" id="flare" onClick={() => toggleTheme("flare")}>{t.flare}</button>
+            </div>
 
-        <div className="language-buttons">
-          <button className="language-btn" id="en" onClick={toggleLanguage}>EN</button>
-          <hr className="divider" />
-          <button className="language-btn" id="pl" onClick={toggleLanguage}>PL</button>
-        </div>
-      </div>
-
-      {/* Контент с изображением и описанием */}
-      <section className="content-section">
-        <div className="image-wrap">
-          <img
-            src={currentData.img} 
-            alt={currentData.name}
-            className="product-image"
-          />
-        </div>
-        <div className="product-info">
-          <h2 className="product-title">{currentData.name}</h2>
-          <h3 className="discover-facts">
-            {t.discover} <span className={`facts ${currentTheme}`}>{t.discoverFacts}</span>
-          </h3>
-
-          {/* Кнопки навигации */}
-          <div className="navigation-buttons">
-            <button className="nav-btn" onClick={prevProduct}>{t.prev}</button>
-            <button className="nav-btn" onClick={nextProduct}>{t.next}</button>
+            <div className="language-buttons">
+              <button className="language-btn" id="en" onClick={toggleLanguage}>EN</button>
+              <hr className="divider" />
+              <button className="language-btn" id="pl" onClick={toggleLanguage}>PL</button>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Новая секция с карточками */}
-      {/* Если выбран продукт, отображаем подробную информацию */}
-      {selectedProductIndex !== null ? (
-          <BigCard
-            product={detailsData[selectedProductIndex]}
-          onBack={() => setSelectedProductIndex(null)}
-          theme={currentTheme}
+          {/* Контент с изображением и описанием */}
+          <section className="content-section">
+            <div className="image-wrap">
+              <img
+                src={currentData.img} 
+                alt={currentData.name}
+                className="product-image"
+              />
+            </div>
+            <div className="product-info">
+              <h2 className="product-title">{currentData.name}</h2>
+              <h3 className="discover-facts">
+                {t.discover} <span className={`facts ${currentTheme}`}>{t.discoverFacts}</span>
+              </h3>
+
+              {/* Кнопки навигации */}
+              <div className="navigation-buttons">
+                <button className="nav-btn" onClick={prevProduct}>{t.prev}</button>
+                <button className="nav-btn" onClick={nextProduct}>{t.next}</button>
+              </div>
+            </div>
+          </section>
+
+          {/* Новая секция с карточками */}
+          {/* Если выбран продукт, отображаем подробную информацию */}
+          {selectedProductIndex !== null ? (
+              <BigCard
+                product={detailsData[selectedProductIndex]}
+                onBack={() => setSelectedProductIndex(null)}
+                theme={currentTheme}
+              />
+            ) : (
+              <DetailsSection
+                productList={detailsData}
+                onSelect={setSelectedProductIndex}
+                toggleTheme={toggleTheme} // Передача функции смены темы
+                t={t} // Передача объекта с текстом
+                language={language}
+              />
+          )}
+          {/* Секция History */}
+          <History
+            historyData={historyData}
+            isVisible={historyVisible}
+            onToggle={() => setHistoryVisible(prev => !prev)}
+            t={t}
+            theme={currentTheme}
           />
-        ) : (
-          <DetailsSection
-            productList={detailsData}
-            onSelect={setSelectedProductIndex}
-            toggleTheme={toggleTheme} // Передача функции смены темы
-            t={t} // Передача объекта с текстом
+          {/* Секция About */}
+          <About
             language={language}
+            image={currentData.img}
           />
-
+          <Footer language={language} />
+        </>
       )}
-      {/* Секция History */}
-      <History
-        historyData={historyData}
-        isVisible={historyVisible}
-        onToggle={() => setHistoryVisible(prev => !prev)}
-        t={t}
-        theme={currentTheme}
-      />
-      {/* Секция About */}
-      <About
-        language={language}
-        image={currentData.img}
-      />
-      <Footer language={language} />
     </div>
   );
 };
