@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import logo from "./assets/logo.png";
 import "./index.css";
-import { alcoholsEN } from "./assets/data/alcohols-en";
-import { alcoholsPL } from "./assets/data/alcohols-pl";
-import { pyrotechnicsEN } from "./assets/data/pyrotechnics-en";
-import { pyrotechnicsPL } from "./assets/data/pyrotechnics-PL";
-import { alcoholsHistoryEN } from "./assets/data/alcohol-history-en";
-import { alcoholsHistoryPL } from "./assets/data/alcohol-history-pl";
-import { pyrotechnicsHistoryEN } from "./assets/data/pyrotechnics-history-en";
-import { pyrotechnicsHistoryPL } from "./assets/data/pyrotechnics-history-pl";
-import { translations } from "./assets/data/translations";
+import { alcoholsEN } from "./assets/data/alcohols-en.js";
+import { alcoholsPL } from "./assets/data/alcohols-pl.js";
+import { pyrotechnicsEN } from "./assets/data/pyrotechnics-en.js";
+import { pyrotechnicsPL } from "./assets/data/pyrotechnics-pl.js";
+import { alcoholsHistoryEN } from "./assets/data/alcohol-history-en.js";
+import { alcoholsHistoryPL } from "./assets/data/alcohol-history-pl.js";
+import { pyrotechnicsHistoryEN } from "./assets/data/pyrotechnics-history-en.js";
+import { pyrotechnicsHistoryPL } from "./assets/data/pyrotechnics-history-pl.js";
+import { translations } from "./assets/data/translations.js";
 import DetailsSection from './components/DetailsSection';
-import BigCard from './components/BigCard';
-import History from './components/History';
-import About from './components/About';
-import Footer from './components/Footer'; // Импортируем Footer
+import BigCard from './components/BigCard.jsx';
+import History from './components/History.jsx';
+import About from './components/About.jsx';
+import Footer from './components/Footer.jsx'; // Импортируем Footer
 
 // Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
 const allAlcoholsEN = alcoholsEN;
