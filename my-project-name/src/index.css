@@ -625,3 +625,28 @@ body {
 .social-links a:hover {
   color: var(--vinous);
 }
+
+/* Стили для кастомного скролла */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Цвет фона для трека */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--vinous);
+  /* Цвет для ползунка */
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+  /* Цвет границы вокруг ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8b0000;
+  /* Цвет ползунка при наведении */
+}
