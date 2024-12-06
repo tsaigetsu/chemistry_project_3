@@ -124,6 +124,13 @@ body {
   /* Отключает взаимодействие с текстом */
 }
 
+@media (max-width: 1440px) {
+  .background-text {
+    font-size: 144px;
+  }
+}
+
+
 .filter-overlay {
   position: absolute;
   top: 0;
@@ -697,4 +704,379 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #8b0000;
   /* Цвет ползунка при наведении */
+}
+
+@media (max-width: 1440px) {
+
+  .background-text-section {
+    height: 800px;
+  }
+
+  /* Изменения для меню */
+  .sidebar {
+    width: 70px;
+    /* Увеличиваем ширину меню */
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .logo {
+    width: 40px;
+    /* Увеличиваем логотип */
+    height: 50px;
+  }
+
+  .language-buttons {
+    margin-bottom: 50px;
+    /* Увеличиваем отступы */
+  }
+
+  /* Увеличиваем размеры кнопок */
+  .language-btn,
+  .additional-btn {
+    font-size: 18px;
+  }
+
+  /* Секция с продуктом */
+  .content-section {
+    top: 10%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+  }
+
+  .product-image {
+    max-width: 650px;
+    max-height: 650px;
+    margin-bottom: 30px;
+    transform: rotate(-30deg);
+  }
+
+  .product-title {
+    font-size: 60px;
+  }
+
+  .discover-facts {
+    font-size: 36px;
+  }
+
+  .facts {
+    font-size: 18px;
+  }
+
+  /* Навигационные кнопки */
+  .navigation-buttons {
+    gap: 250px;
+    /* Увеличиваем промежутки между кнопками */
+  }
+
+  .nav-btn {
+    font-size: 1.4rem;
+  }
+
+  .nav-btn::before {
+    font-size: 1.8rem;
+  }
+
+  /* История */
+  .history-section {
+    max-height: 250px;
+  }
+
+  .history-section.expanded {
+    max-height: 350px;
+  }
+
+  .history-title {
+    font-size: 2rem;
+  }
+
+  /* Карточки */
+  .cards-container {
+    gap: 50px;
+    /* Увеличиваем отступы */
+  }
+
+  .section-wrap {
+    max-width: 1000px;
+  }
+
+  .card {
+    width: 180px;
+    /* Увеличиваем ширину карточки */
+  }
+
+  /* Секция с деталями */
+  .details-section-title {
+    font-size: 40px;
+  }
+
+  .small-card-list {
+    /* 4 карточки в ряд */
+  }
+
+  .big-card-image {
+    width: 450px;
+    height: 450px;
+  }
+
+  .big-card-text {
+    width: 350px;
+  }
+
+  .big-card-title {
+    font-size: 2rem;
+  }
+
+  /* Кнопки для смены темы */
+  .theme-buttons {
+    gap: 30px;
+  }
+
+  .theme-btn {
+    font-size: 20px;
+  }
+
+  /* Общее изменение для шрифтов */
+  .about-title {
+    font-size: 40px;
+  }
+
+  .about-description {
+    font-size: 20px;
+  }
+
+  .footer-text-container {
+    margin-left: 50px;
+  }
+
+  /* Изменение аватара */
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  /* Социальные кнопки */
+  .social-links {
+    width: 200px;
+  }
+
+  /* Плавность для скролла */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    border: 4px solid #f1f1f1;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .background-text-section {
+    height: 680px;
+  }
+
+  /* Меню слева */
+  .sidebar {
+    width: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    width: 28px;
+    height: 38px;
+  }
+
+  .language-buttons,
+  .additional-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .additional-btn {
+    writing-mode: vertical-lr;
+  }
+
+  .divider {
+    width: 60%;
+    margin: 5px 0;
+  }
+
+  /* Основные стили для текста */
+  .background-text {
+    font-size: 80px;
+  }
+
+  .filter-overlay {
+    opacity: 0.15;
+  }
+
+  /* Секция с продуктом */
+  .content-section {
+    top: 10%;
+    left: 28%;
+    transform: translateX(-50%);
+  }
+
+  .image-wrap {
+    width: 400px;
+    height: 400px;
+  }
+
+  .product-title {
+    font-size: 40px;
+  }
+
+  .discover-facts {
+    font-size: 28px;
+  }
+
+  .navigation-buttons {
+    gap: 100px;
+  }
+
+  .nav-btn {
+    font-size: 1rem;
+  }
+
+  /* Карточки */
+  .cards-container {
+    margin-left: 50px;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100px;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 130px;
+    margin: 0;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+
+  .card-title {
+    margin: 10px 0;
+  }
+
+  /* Кнопки для смены темы */
+  .theme-buttons {
+    flex-direction: row;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .theme-btn {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .small-card-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  /* Большие карточки */
+  .big-card-image {
+    width: 350px;
+    height: 350px;
+  }
+
+  .big-card-text {
+    width: 250px;
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 40px 0;
+  }
+
+  .about-text {
+    width: 250px;
+    margin: 0 40px 0 0;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+
+  .about-image-wrap {
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+  }
+
+  .about-image {
+    width: 35%;
+    height: auto;
+    ;
+  }
+
+  .footer {
+    padding: 20px 20px 20px 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+  .footer-text-container {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .social-links {
+    width: 150px;
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* История */
+  .history-section {
+    padding: 15px 30px;
+    max-height: 100px;
+  }
+
+  .filter-overlay-history {
+    opacity: 0.8;
+  }
+
+  .history-title {
+    font-size: 1.5rem;
+  }
+
+  .toggle-button {
+    font-size: 18px;
+  }
+
+  .history-p {
+    font-size: 14px;
+  }
+
+  /* Скролл */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--vinous);
+  }
 }
