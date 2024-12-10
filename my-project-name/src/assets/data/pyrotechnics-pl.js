@@ -6,63 +6,72 @@ import anfo from '../images/anfo.png';
 
 export const pyrotechnicsPL = [
   { 
-    name: 'PETN', 
-    img: penta, 
-    description: 'Bardzo wybuchowy materiał używany w wojsku.',
+    name: 'GIN', 
+    img: penta,
+    alcoholContent: '47%',
+    description: 'Destylowany alkohol aromatyzowany jagodami jałowca i innymi składnikami roślinnymi, stanowi kluczowy składnik koktajli, takich jak gin z tonikiem.',
     facts: `
-      - PETN to azotan organiczny, głównie używany w wojsku i produkcji materiałów wybuchowych.
-      - W przemyśle PETN jest używany w precyzyjnych aplikacjach wymagających dużej siły detonacyjnej.
+      - Gin powstaje poprzez destylację roślin, co odróżnia go od wódki.
+      - Gin pochodzi z Holandii, gdzie nazywany był genever.
     `,
-    myths:`
-      - PETN jest wykorzystywany tylko w wojsku – to nieprawda, jest także wykorzystywany w przemyśle cywilnym.
+    myths: `
+      - Gin to po prostu "wódka z jałowcem."
+      - Gin pochodzi z Anglii.
     `
   },
   { 
-    name: 'Dynamit', 
-    img: dynamite, 
-    description: 'Znany materiał wybuchowy używany w górnictwie.',
+    name: 'Whisky', 
+    img: dynamite,
+    alcoholContent: '50%',
+    description: 'Destylowany alkohol produkowany z ziaren, leżakowany w beczkach, wytwarzany w regionach takich jak Szkocja, Irlandia, USA i Kanada.',
     facts: `
-      - Dynamit został wynaleziony przez Alfreda Nobla w 1867 roku i jest szeroko stosowany w górnictwie i budownictwie.
-      - Dynamit jest bardziej stabilnym materiałem wybuchowym niż nitrogliceryna.
+      - Różnią się procesem produkcji, smakiem, a nawet pisownią (whisky vs. whiskey).
+      - Niektórzy preferują ją pić czystą lub z kroplą wody, aby uwolnić jej aromaty.
     `,
-    myths:`
-      - Dynamit jest niebezpieczny do codziennego użytku – choć jest niebezpieczny, w górnictwie i rozbiórce jest stosowany w kontrolowany sposób.
+    myths: `
+      - Szkocka whisky i irlandzka whiskey to to samo.
+      - Whisky najlepiej smakuje z lodem.
     `
   },
   { 
-    name: 'ANFO', 
-    img: anfo, 
-    description: 'Powszechnie stosowany materiał wybuchowy w górnictwie i budownictwie.',
+    name: 'Absinthe', 
+    img: anfo,
+    alcoholContent: '80%',
+    description: 'Mocny alkohol wytwarzany z piołunu, anyżu i kopru włoskiego, znany jako "Zielona Wróżka" ze względu na swój kolor i tajemniczą reputację.',
     facts: `
-      - ANFO (azotan amonu i olej opałowy) jest szeroko stosowanym materiałem wybuchowym, głównie w górnictwie i kamieniołomach.
-      - Jest stosunkowo tani i bezpieczny w obsłudze, gdy jest odpowiednio używany.
+      - Związek chemiczny tujon, obecny w piołunie, był kiedyś uważany za halucynogenny, ale nowoczesne badania obaliły ten mit.
+      - Choć w początkach XX wieku był zakazany, obecnie absynt jest legalny w większości krajów pod pewnymi regulacjami.
     `,
-    myths:`
-      - ANFO jest nieszkodliwy i stosowany w małych ilościach – większe ilości mogą być niezwykle niebezpieczne, zwłaszcza jeśli nie są odpowiednio przechowywane.
+    myths: `
+      - Absynt powoduje halucynacje.
+      - Absynt jest zakazany w większości krajów.
     `
   },
   { 
-    name: 'Rakiety', 
-    img: rockets, 
-    description: 'Rakiety o dużej mocy stosowane w sztuce pirotechnicznej i wojsku.',
+    name: 'Cognac', 
+    img: rockets,
+    alcoholContent: '40%',
+    description: 'Ekskluzywny rodzaj brandy produkowany wyłącznie w regionie Cognac we Francji, dojrzewający w dębowych beczkach.',
     facts: `
-      - Rakiety zaprojektowane są do wytwarzania dużego ciągu, stosowane zarówno w fajerwerkach, jak i w wojskowych zastosowaniach.
-      - Rakiety mogą być napędzane przez różne paliwa, w tym stałe i ciekłe.
+      - Autentyczny koniak musi pochodzić z regionu Cognac i spełniać surowe zasady produkcji.
+      - Starsze koniaki mogą mieć bardziej złożone smaki, ale młodsze są równie cenione za swoją świeżość.
     `,
-    myths:`
-      - Rakiety mają tylko zastosowanie wojskowe – rakiety są także szeroko stosowane w fajerwerkach i eksploracji kosmosu.
+    myths: `
+      - Koniak można produkować gdziekolwiek.
+      - Im starszy koniak, tym lepszy.
     `
   },
   { 
-    name: 'TNT', 
-    img: tnt, 
-    description: 'Potężny materiał wybuchowy stosowany głównie w rozbiórkach i wojsku.',
+    name: 'Martini', 
+    img: tnt,
+    description: 'Martini odnosi się zarówno do klasycznego koktajlu, jak i do rodzaju wermutu (aromatyzowanego wina) o ziołowym smaku, serwowanego samodzielnie lub jako baza do drinków.',
     facts: `
-      - TNT (trinitrotoluen) jest jednym z najczęściej używanych materiałów wybuchowych w rozbiórkach.
-      - Jest znany z stabilności i bezpieczeństwa w obsłudze w porównaniu do innych materiałów wybuchowych.
+      - Można je również udekorować cytryną, koktajlową cebulką lub innymi dodatkami.
+      - Martini to także marka wermutu, który można pić samodzielnie.
     `,
-    myths:`
-      - TNT jest zbyt niebezpieczne, by używać go bezpiecznie – TNT jest stabilne i stosunkowo bezpieczne, jeśli jest odpowiednio obsługiwane.
+    myths: `
+      - Martini zawsze podaje się z oliwką.
+      - Martini to tylko koktajl.
     `
   },
 ];

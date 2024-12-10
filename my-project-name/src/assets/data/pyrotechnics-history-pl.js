@@ -1,9 +1,7 @@
 export const pyrotechnicsHistoryPL = [
     {
-        history: `Pyrotechnika ma swoje korzenie w starożytnych Chinach. Pierwsze materiały wybuchowe, takie jak proch strzelniczy, powstały tam około IX wieku n.e. Chińscy alchemicy przypadkowo odkryli, że mieszanka siarki, węgla i azotanu potasu reaguje wybuchowo, co dało początek prochowi strzelniczemu. Początkowo używano go głównie do celów militarnych i obrzędowych, ale wkrótce zaczęto wykorzystywać go również do tworzenia efektów świetlnych podczas festiwali.
+        history: `Jednym z najpopularniejszych mitów o alkoholu jest przekonanie, że „alkohol rozgrzewa”. Często słyszymy, że wypicie kieliszka mocnego trunku w zimny dzień pomaga przetrwać niskie temperatury. Ten mit ma swoje korzenie w dawnych czasach, kiedy alkohol był stosowany jako „lek” na chłód. Po wypiciu alkoholu faktycznie odczuwamy ciepło – jest to spowodowane rozszerzeniem naczyń krwionośnych, co zwiększa przepływ krwi do skóry.
 
-        W XIV wieku, dzięki rozwoju handlu, technologia prochu strzelniczego dotarła do Europy. Tam zaczęto eksperymentować z prochem w celach wojskowych, ale również w rozrywce. Pierwsze fajerwerki, znane dzisiaj z występów na różnych wydarzeniach, powstały w Europie w XV wieku, gdzie pyrotechnika zaczęła być stosowana w teatrze i przy okazjach królewskich.
-
-        W XVI wieku technologia pyrotechniki stała się bardziej zaawansowana, a w XVII wieku wybuchy i efekty świetlne stały się popularnym elementem festiwali w całej Europie. Z biegiem lat pyrotechnika ewoluowała, stając się dziedziną wykorzystywaną nie tylko do celów rozrywkowych, ale także w przemyśle, np. w górnictwie czy inżynierii.`
+        Jednak to uczucie jest złudne. Alkohol powoduje utratę ciepła z organizmu, ponieważ krew, która normalnie pozostawałaby głęboko w ciele, teraz trafia na powierzchnię skóry. W rzeczywistości zwiększa to ryzyko wychłodzenia, szczególnie w ekstremalnych warunkach pogodowych. Mimo to, mit ten jest wciąż powszechny, a wiele osób w zimowe dni nadal sięga po kieliszek, wierząc, że pomoże im się rozgrzać.`
     }
 ]

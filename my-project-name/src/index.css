@@ -116,7 +116,7 @@ body {
   font-size: 200px;
   font-weight: bold;
   color: var(--vinous);
-  opacity: 0.1;
+  opacity: 0.3;
   /* Полупрозрачный эффект */
   z-index: 1;
   pointer-events: none;
@@ -143,7 +143,7 @@ body {
   background-position: center;
   z-index: 2;
   /* Фильтр поверх текста */
-  opacity: 0.1;
+  opacity: 0.05;
   transition: opacity 0.3s ease;
 }
 
@@ -195,10 +195,10 @@ body {
 }
 
 .discover-facts {
-  font-size: 32px;
+  font-size: 52px;
   font-weight: 500;
   margin-top: 20px;
-  transition: font-size 0.3s ease;
+  transition: font-size 0.5s ease;
 }
 
 .facts {
@@ -326,6 +326,7 @@ body {
   /* Фиксированная ширина для карточки */
   height: auto;
   /* Фиксированная высота карточки */
+  box-shadow: 5px 5px 20px var(--gray-smoke);
   transition: transform 0.3s ease;
 }
 
@@ -430,6 +431,8 @@ body {
 .big-card-content {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
@@ -441,12 +444,13 @@ body {
 
 .big-card-text {
   width: 300px;
+  height: 330px;
   flex: 1;
   border: 2px solid var(--dark);
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .big-card-title {
@@ -528,7 +532,7 @@ body {
 }
 
 .history-section.expanded {
-  max-height: 187px;
+  max-height: 250px;
   transition: max-height 1s ease-in, opacity 1s ease-in;
 }
 
@@ -550,11 +554,33 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  color: var(--white);
+  transform: color 1 ease;
+}
+
+.toggle-button.inactive {
+  color: var(--dark);
+  /* Цвет кнопки: темный */
+}
+
+/* Стиль кнопки в открытом состоянии */
+.toggle-button.active {
+  color: var(--light-gray);
+  /* Цвет кнопки: светло-серый */
 }
 
 .history-p {
   margin-bottom: 10px;
   color: var(--light-gray);
+  height: 152px;
+}
+
+.history-details {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .about-section {
@@ -739,9 +765,16 @@ body {
 
   /* Секция с продуктом */
   .content-section {
-    top: 10%;
-    left: 36%;
+    top: 0;
+    left: 34%;
     transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 1024px) {
+    .content-section {
+      top: 0;
+      left: 25%;
+    }
   }
 
   .product-image {
@@ -756,11 +789,7 @@ body {
   }
 
   .discover-facts {
-    font-size: 36px;
-  }
-
-  .facts {
-    font-size: 18px;
+    font-size: 60px;
   }
 
   /* Навигационные кнопки */
@@ -779,11 +808,11 @@ body {
 
   /* История */
   .history-section {
-    max-height: 250px;
+    height: 250px;
   }
 
   .history-section.expanded {
-    max-height: 350px;
+    height: 350px;
   }
 
   .history-title {
@@ -937,7 +966,7 @@ body {
   }
 
   .discover-facts {
-    font-size: 28px;
+    font-size: 40px;
   }
 
   .navigation-buttons {
@@ -1019,7 +1048,7 @@ body {
   }
 
   .about-image {
-    width: 35%;
+    width: 80%;
     height: auto;
     ;
   }

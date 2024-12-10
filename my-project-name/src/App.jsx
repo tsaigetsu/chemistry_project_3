@@ -10,14 +10,14 @@ import { alcoholsHistoryPL } from "./assets/data/alcohol-history-pl.js";
 import { pyrotechnicsHistoryEN } from "./assets/data/pyrotechnics-history-en.js";
 import { pyrotechnicsHistoryPL } from "./assets/data/pyrotechnics-history-pl.js";
 import { translations } from "./assets/data/translations.js";
-import DetailsSection from './components/DetailsSection';
-import BigCard from './components/BigCard.jsx';
-import History from './components/History.jsx';
-import About from './components/About.jsx';
-import Footer from './components/Footer.jsx'; // Импортируем Footer
-import Loader from './components/Loader.jsx'; // Импортируем компонент лоадера
-import AOS from 'aos'; // Импортируем AOS
-import 'aos/dist/aos.css'; // Импортируем стили AOS
+import DetailsSection from "./components/DetailsSection";
+import BigCard from "./components/BigCard.jsx";
+import History from "./components/History.jsx";
+import About from "./components/About.jsx";
+import Footer from "./components/Footer.jsx"; // Импортируем Footer
+import Loader from "./components/Loader.jsx"; // Импортируем компонент лоадера
+import AOS from "aos"; // Импортируем AOS
+import "aos/dist/aos.css"; // Импортируем стили AOS
 
 // Объединяем данные для алкоголя и пиротехники в отдельные массивы для каждой темы
 const allAlcoholsEN = alcoholsEN;
@@ -37,7 +37,7 @@ const App = () => {
     // Инициализация AOS
     AOS.init({
       duration: 1000, // Продолжительность анимации
-      easing: 'ease-out', // Эффект движения
+      easing: "ease-out", // Эффект движения
       once: true, // Анимация будет запускаться только один раз
     });
 
@@ -59,34 +59,59 @@ const App = () => {
 
   // Логика для смены продукта
   const nextProduct = () => {
-    const totalProducts = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
+    const totalProducts =
+      currentTheme === "alcohol"
+        ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length
+        : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
     setCurrentProductIndex((prevIndex) => (prevIndex + 1) % totalProducts);
   };
 
   const prevProduct = () => {
-    const totalProducts = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
-    setCurrentProductIndex((prevIndex) => (prevIndex - 1 + totalProducts) % totalProducts);
+    const totalProducts =
+      currentTheme === "alcohol"
+        ? (language === "en" ? allAlcoholsEN : allAlcoholsPL).length
+        : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL).length;
+    setCurrentProductIndex(
+      (prevIndex) => (prevIndex - 1 + totalProducts) % totalProducts
+    );
   };
 
   // Выбор данных в зависимости от текущей темы и языка
-  const currentData = currentTheme === "alcohol"
-    ? language === "en" ? allAlcoholsEN[currentProductIndex] : allAlcoholsPL[currentProductIndex]
-    : language === "en" ? allPyrotechnicsEN[currentProductIndex] : allPyrotechnicsPL[currentProductIndex];
+  const currentData =
+    currentTheme === "alcohol"
+      ? language === "en"
+        ? allAlcoholsEN[currentProductIndex]
+        : allAlcoholsPL[currentProductIndex]
+      : language === "en"
+      ? allPyrotechnicsEN[currentProductIndex]
+      : allPyrotechnicsPL[currentProductIndex];
 
   // Получаем переводы для текущего языка
   const t = translations[language];
 
   // Данные для карточек в зависимости от темы
-  const detailsData = currentTheme === "alcohol" ? (language === "en" ? allAlcoholsEN : allAlcoholsPL) : (language === "en" ? allPyrotechnicsEN : allPyrotechnicsPL);
+  const detailsData =
+    currentTheme === "alcohol"
+      ? language === "en"
+        ? allAlcoholsEN
+        : allAlcoholsPL
+      : language === "en"
+      ? allPyrotechnicsEN
+      : allPyrotechnicsPL;
 
   // Функция для обработки клика на карточку
   const handleCardClick = (index) => {
     setSelectedProductIndex(index);
   };
 
-   const historyData = currentTheme === "alcohol"
-    ? language === "en" ? alcoholsHistoryEN : alcoholsHistoryPL
-    : language === "en" ? pyrotechnicsHistoryEN : pyrotechnicsHistoryPL;
+  const historyData =
+    currentTheme === "alcohol"
+      ? language === "en"
+        ? alcoholsHistoryEN
+        : alcoholsHistoryPL
+      : language === "en"
+      ? pyrotechnicsHistoryEN
+      : pyrotechnicsHistoryPL;
 
   return (
     <div className="App">
@@ -106,41 +131,69 @@ const App = () => {
 
             {/* Новые кнопки */}
             <div className="additional-buttons">
-              <button className="additional-btn" id="alcohol" onClick={() => toggleTheme("alcohol")}>{t.alcohol}</button>
+              <button
+                className="additional-btn"
+                id="alcohol"
+                onClick={() => toggleTheme("alcohol")}
+              >
+                {t.alcohol}
+              </button>
               <hr className="divider" />
-              <button className="additional-btn" id="flare" onClick={() => toggleTheme("flare")}>{t.flare}</button>
+              <button
+                className="additional-btn"
+                id="flare"
+                onClick={() => toggleTheme("flare")}
+              >
+                {t.flare}
+              </button>
             </div>
 
             <div className="language-buttons">
-              <button className="language-btn" id="en" onClick={toggleLanguage}>EN</button>
+              <button className="language-btn" id="en" onClick={toggleLanguage}>
+                EN
+              </button>
               <hr className="divider" />
-              <button className="language-btn" id="pl" onClick={toggleLanguage}>PL</button>
+              <button className="language-btn" id="pl" onClick={toggleLanguage}>
+                PL
+              </button>
             </div>
           </div>
 
           {/* Контент с изображением и описанием */}
           <section className="content-section" data-aos="fade-down">
             <div className="image-wrap">
-              <img src={currentData.img} alt={currentData.name} className="product-image" />
+              <img
+                src={currentData.img}
+                alt={currentData.name}
+                className="product-image"
+              />
             </div>
             <div className="product-info">
               <h2 className="product-title">{currentData.name}</h2>
               <h3 className="discover-facts">
-                {t.discover} <span className={`facts ${currentTheme}`}>{t.discoverFacts}</span>
+                {t.discover}{" "}
+                <span className={`facts ${currentTheme}`}>
+                  {currentTheme === "alcohol" ? t.alcohol : t.flare}
+                </span>
               </h3>
+
               <div className="navigation-buttons">
-                <button 
-                        className={`nav-btn ${currentTheme === "alcohol" ? "alcohol" : "flare"}`} 
-                        onClick={prevProduct}
-                      >
-                        {t.prev}
-                      </button>
-                      <button 
-                        className={`nav-btn ${currentTheme === "alcohol" ? "alcohol" : "flare"}`} 
-                        onClick={nextProduct}
-                      >
-                        {t.next}
-                      </button>
+                <button
+                  className={`nav-btn ${
+                    currentTheme === "alcohol" ? "alcohol" : "flare"
+                  }`}
+                  onClick={prevProduct}
+                >
+                  {t.prev}
+                </button>
+                <button
+                  className={`nav-btn ${
+                    currentTheme === "alcohol" ? "alcohol" : "flare"
+                  }`}
+                  onClick={nextProduct}
+                >
+                  {t.next}
+                </button>
               </div>
             </div>
           </section>
@@ -167,16 +220,13 @@ const App = () => {
           <History
             historyData={historyData}
             isVisible={historyVisible}
-            onToggle={() => setHistoryVisible(prev => !prev)}
+            onToggle={() => setHistoryVisible((prev) => !prev)}
             t={t}
             theme={currentTheme}
           />
 
           {/* Секция About */}
-          <About
-            language={language}
-            image={currentData.img}
-          />
+          <About language={language} image={currentData.img} />
 
           {/* Футер */}
           <Footer language={language} />

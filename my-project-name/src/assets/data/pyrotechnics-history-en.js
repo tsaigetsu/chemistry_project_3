@@ -1,9 +1,7 @@
 export const pyrotechnicsHistoryEN = [
     {
-        history: `Pyrotechnics has its roots in ancient China. The first explosive materials, such as gunpowder, were created there around the 9th century AD. Chinese alchemists accidentally discovered that a mixture of sulfur, carbon, and potassium nitrate reacts explosively, leading to the creation of gunpowder. Initially, it was used mainly for military and ceremonial purposes, but soon it was also used to create light effects during festivals.
+        history: `One of the most popular myths about alcohol is the belief that "alcohol warms you up." It’s often said that drinking a shot of strong liquor on a cold day helps endure low temperatures. This myth has its roots in ancient times when alcohol was used as a "cure" for the cold. After drinking alcohol, we indeed feel warm – this is caused by the dilation of blood vessels, which increases blood flow to the skin.
 
-        In the 14th century, with the development of trade, gunpowder technology spread to Europe. There, experimentation with gunpowder began for military purposes but also for entertainment. The first fireworks, as we know them today from performances at various events, were created in Europe in the 15th century, where pyrotechnics began to be used in theaters and at royal events.
-
-        In the 16th century, pyrotechnic technology became more advanced, and by the 17th century, explosions and light effects became a popular element of festivals across Europe. Over time, pyrotechnics evolved, becoming a field used not only for entertainment purposes but also in industries such as mining and engineering.`
+        However, this sensation is deceptive. Alcohol causes the body to lose heat because blood that would normally stay deep inside now flows to the surface of the skin. In reality, this increases the risk of hypothermia, especially in extreme weather conditions. Despite this, the myth remains widespread, and many people still reach for a drink on winter days, believing it will help them stay warm.`
     }
 ]

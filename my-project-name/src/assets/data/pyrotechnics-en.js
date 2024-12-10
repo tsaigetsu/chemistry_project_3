@@ -6,63 +6,70 @@ import anfo from '../images/anfo.png';
 
 export const pyrotechnicsEN = [
   { 
-    name: 'PETN', 
-    img: penta, 
-    description: 'A highly explosive material used in the military.',
+    name: 'GIN', 
+    img: penta,
+    alcoholContent: '47%',
+    description: 'A distilled spirit flavored with juniper berries and other botanicals, it’s a key ingredient in cocktails like the gin and tonic.',
     facts: `
-      - PETN is an organic nitrate, primarily used in the military and explosives manufacturing.
-      - In industry, PETN is used for precision applications requiring high detonation force.
+      Gin is made by distilling botanicals, which sets it apart from vodka.
+      Gin originated in the Netherlands, where it was called genever
     `,
-    myths:`
-      - PETN is only used in the military – this is false, as it is also used in civilian industries.
+    myths: `
+      Gin is just "vodka with juniper."
+      Gin originated in England
     `
   },
   { 
-    name: 'Dynamite', 
-    img: dynamite, 
-    description: 'A well-known explosive used in mining.',
+    name: 'Whisky', 
+    img: dynamite,
+    alcoholContent: '50%',
+    description: 'A distilled spirit made from grains, aged in barrels, and produced in regions like Scotland, Ireland, the USA, and Canada.',
     facts: `
-      - Dynamite was invented by Alfred Nobel in 1867 and is widely used in mining and construction.
-      - Dynamite is a more stable explosive than nitroglycerin.
+      They differ in production process, taste, and even spelling (whisky vs. whiskey).
+      Some prefer it neat or with a drop of water to release its aromas
     `,
-    myths:`
-      - Dynamite is dangerous for regular use – while it is dangerous, it is controlled and handled properly in mining and demolition.
+    myths: `
+      Scotch whisky and Irish whiskey are the same.
+      Whisky tastes best with ice
     `
   },
   { 
-    name: 'ANFO', 
-    img: anfo, 
-    description: 'A common explosive used in mining and construction.',
+    name: 'Absinthe', 
+    img: anfo,
+    alcoholContent: '80%',
+    description: 'A strong alcoholic drink made from wormwood, anise, and fennel, famously known as the "Green Fairy" due to its color and mysterious reputation.',
     facts: `
-      - ANFO (Ammonium Nitrate Fuel Oil) is a widely used explosive, primarily in mining and quarrying.
-      - It is relatively inexpensive and safe to handle when used properly.
+      The chemical compound thujone, found in wormwood, was once believed to be hallucinogenic, but modern studies have debunked this claim.
+      While it was banned in the early 20th century, absinthe is now legal in most countries under certain regulations
     `,
-    myths:`
-      - ANFO is harmless and only used in small quantities – large amounts can be extremely dangerous, especially when mishandled.
+    myths: `Absinthe causes hallucinations.Absinthe is banned in most countries
     `
   },
   { 
-    name: 'Rockets', 
-    img: rockets, 
-    description: 'High-powered rockets often used for fireworks and military applications.',
+    name: 'Cognac', 
+    img: rockets,
+    alcoholContent: '40%',
+    description: 'A premium type of brandy made exclusively in the Cognac region of France, aged in oak barrels.',
     facts: `
-      - Rockets are designed to produce a large thrust and are used in both entertainment (fireworks) and defense sectors.
-      - Rockets can be powered by various fuels including solid and liquid propellants.
+      Authentic cognac must come from the Cognac region and follow strict production rules.
+      Older cognacs may have more complex flavors, but younger ones are equally valued for their freshness
     `,
-    myths:`
-      - Rockets only have military uses – rockets are also widely used in fireworks and space exploration.
+    myths: `
+      Cognac can be made anywhere.
+      The older the cognac, the better
     `
   },
   { 
-    name: 'TNT', 
-    img: tnt, 
-    description: 'A powerful explosive commonly used in demolition and military applications.',
+    name: 'Martini', 
+    img: tnt,
+    description: 'Martini refers to both a classic cocktail and a type of vermouth (aromatized wine) with a herbal flavor, served on its own or as a base for mixed drinks.',
     facts: `
-      - TNT (Trinitrotoluene) is one of the most commonly used explosives in demolition.
-      - It is known for its stability and safety in handling compared to other explosives.
+      It can also be garnished with lemon, a cocktail onion, or other accompaniments.
+      Martini is also a brand of vermouth that can be enjoyed on its own
     `,
-    myths:`
-      - TNT is too dangerous to use safely – TNT is stable and relatively safe when handled correctly.
+    myths: `
+      Martini is always served with an olive.
+      Martini is just a cocktail
     `
   },
 ];

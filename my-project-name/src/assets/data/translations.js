@@ -1,8 +1,8 @@
 export const translations = {
   en: {
     title: "Burn And Blur",
-    alcohol: "Alcohol",
-    flare: "Flare",
+    alcohol: "Facts",
+    flare: "Myths",
     about: "About",
     alcoholContent: "Alcohol content",
     detailedDescription: "Detailed Description",
@@ -23,8 +23,8 @@ export const translations = {
   },
   pl: {
     title: "Burn And Blur",
-    alcohol: "Alkohol",
-    flare: "Flara",
+    alcohol: "Fakty",
+    flare: "Alkohol ",
     about: "O projekcie",
     alcoholContent: "Zawartość alkoholu",
     detailedDescription: "Szczegółowy opis",

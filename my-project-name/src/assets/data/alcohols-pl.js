@@ -9,70 +9,40 @@ export const alcoholsPL = [
     name: 'Piwo', 
     img: beerImg, 
     alcoholContent: '5%', 
-    description: 'Orzeźwiające piwo o delikatnym smaku.',
-    facts: `
-      - Piwo zawiera witaminy z grupy B, a także minerały, takie jak potas i magnez, które wspierają układ sercowo-naczyniowy.
-      - Umiarkowane spożycie piwa (1-2 piwa dziennie) zmniejsza ryzyko chorób serca.
-    `,
-    myths:`
-      - Piwo "puszcza brzuch" – to mit, ponieważ przyrost masy ciała wynika bardziej z nadmiernej konsumpcji kalorii niż samego piwa.
-      - Piwo jest łagodne, więc nie wpływa mocno na organizm – w rzeczywistości picie piwa w nadmiarze może prowadzić do uszkodzenia wątroby.
-    ` 
+    description: 'Orzeźwiające jasne piwo o wyrazistym smaku.',
+    facts: `Umiarkowane spożycie piwa (1-2 piwa dziennie) może zmniejszyć ryzyko chorób serca`,
+    myths:`Piwo to łagodny napój, który ma niewielki wpływ na organizm – w rzeczywistości nadmierne spożycie piwa może prowadzić do uszkodzenia wątroby i innych poważnych problemów zdrowotnych`
   },
   { 
     name: 'Wino', 
     img: wineImg, 
     alcoholContent: '12%', 
-    description: 'Czerwone wino o bogatym smaku.',
-    facts: `
-      - Wino, zwłaszcza czerwone, zawiera antyoksydanty, takie jak resweratrol, które mogą pomóc w walce z procesami starzenia i zapobiegać chorobom serca.
-      - Umiarkowane picie (1 kieliszek dziennie) ma korzystny wpływ na zdrowie serca.
-    `,
-    myths:`
-      - Wino jest zdrowe, więc można je pić w większych ilościach – nadmiar wina prowadzi do problemów zdrowotnych, takich jak uzależnienie i choroby wątroby.
-      - Wino "odchudza" – to mit, ponieważ zawartość alkoholu i kalorii w winie może prowadzić do przyrostu wagi.
-    ` 
+    description: 'Bogate czerwone wino o złożonym profilu smakowym.',
+    facts: `Wino, szczególnie czerwone, zawiera antyoksydanty, takie jak resweratrol, które mogą pomóc w walce z procesami starzenia i zapobiegać chorobom serca`,
+    myths:`Wino jest zdrowe, więc możesz pić więcej – nadmierne spożycie wina prowadzi do problemów zdrowotnych, takich jak uzależnienie i choroby wątroby`
   },
   { 
     name: 'Wódka', 
     img: vodkaImg, 
     alcoholContent: '40%', 
     description: 'Czysty alkohol, idealny do koktajli.',
-    facts: `
-      - Wódka ma mało substancji chemicznych, przez co jest jednym z czystszych alkoholi.
-      - Umiarkowane spożycie wódki poprawia nastrój i działa relaksująco.
-    `,
-    myths:`
-      - Wódka jest "zdrowsza" od innych alkoholi – nadmierne picie wódki prowadzi do poważnych uszkodzeń wątroby i serca.
-      - Wódka rozgrzewa – to złudne wrażenie, ponieważ alkohol powoduje rozszerzenie naczyń krwionośnych, co w dłuższej perspektywie prowadzi do utraty ciepła.
-    ` 
+    facts:`Wódka to jeden z najczystszych napojów alkoholowych, zawierający mniej dodatków w porównaniu do innych alkoholi`,
+    myths:`Wódka ogrzewa – alkohol powoduje rozszerzenie naczyń krwionośnych, co w rzeczywistości może prowadzić do utraty ciepła`
   },
   { 
     name: 'Rum', 
     img: rumImg, 
     alcoholContent: '37.5%', 
-    description: 'Słodki rum do koktajli.',
-    facts: `
-      - Rum zawiera większe ilości alkoholu, co sprawia, że szybciej działa na organizm.
-      - Umiarkowane picie rumu działa relaksująco.
-    `,
-    myths:`
-      - Rum ma właściwości lecznicze – choć rum ma działanie antyseptyczne, nadmierne picie prowadzi do wielu problemów zdrowotnych.
-      - Rum wzmacnia libido – to mit, alkohol może obniżyć aktywność seksualną.
-    ` 
+    description: 'Słodki rum, idealny do koktajli.',
+    facts: `Umiarkowane spożycie rumu ma działanie relaksujące`,
+    myths:`Rum zwiększa libido – nadmierne spożycie alkoholu może w rzeczywistości zaburzać aktywność seksualną`
   },
   { 
     name: 'Tequila', 
     img: tequilaImg, 
     alcoholContent: '40%', 
-    description: 'Gładka tequila do shotów i koktajli.',
-    facts: `
-      - Tequila z 100% agawy zawiera mniej dodatków, co sprawia, że jest mniej szkodliwa.
-      - W umiarkowanych ilościach wspomaga trawienie.
-    `,
-    myths:`
-      - Tequila jest "czysta" i bezpieczna – nadmiar tequili prowadzi do problemów zdrowotnych.
-      - Tequila jest bardziej efektywna niż inne alkohole – szybkość upojenia zależy od tolerancji organizmu, a nie od rodzaju alkoholu.
-    ` 
+    description: 'Gładka tequila, idealna do shotów i koktajli.',
+    facts: `W umiarkowanych ilościach tequila może wspomagać trawienie`,
+    myths:`Tequila jest "czysta" i bezpieczna – picie tequili w nadmiarze może nadal prowadzić do poważnych problemów zdrowotnych`
   },
 ];
